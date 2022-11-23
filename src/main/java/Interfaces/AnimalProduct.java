@@ -1,4 +1,4 @@
 package Interfaces;
 
-public interface AnimalProduct {
+public interface AnimalProduct extends Edible {
 }

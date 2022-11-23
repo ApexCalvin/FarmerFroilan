@@ -1,4 +1,5 @@
 package Interfaces;
 
-public interface Produce {
+public interface Produce extends Edible{
+    public Edible yield();
 }

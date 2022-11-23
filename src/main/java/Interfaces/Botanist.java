@@ -1,4 +1,5 @@
 package Interfaces;
 
-public interface Botanist {
+public interface Botanist<Person> {
+    public void plantCrop();
 }
