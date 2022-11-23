@@ -1,4 +1,5 @@
 package Crop;
 
-public class Cornstalk {
+public class Cornstalk extends Crop {
+
 }

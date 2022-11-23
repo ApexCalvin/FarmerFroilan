@@ -6,17 +6,31 @@ import org.junit.Test;
 
 public class Crop_Tests {
     @Test
-    public void cropSetTrueTest() {
+    public void cropSetHarvestedTrueTest() {
         Crop crop = new Crop();
         crop.setHarvestToTrue();
-        boolean expected = crop.hasBeenHarvested();
+        boolean expected = crop.getHarvested();
         Assert.assertTrue(expected);
     }
     @Test
-    public void cropSetFalseTest() {
+    public void cropSetHarvestedFalseTest() {
         Crop crop = new Crop();
         crop.setHarvestToFalse();
-        boolean expected = crop.hasBeenHarvested();
+        boolean expected = crop.getHarvested();
+        Assert.assertFalse(expected);
+    }
+    @Test
+    public void cropSetFertilizedTrueTest() {
+        Crop crop = new Crop();
+        crop.setFertilizedTrue();
+        boolean expected = crop.getFertilized();
+        Assert.assertTrue(expected);
+    }
+    @Test
+    public void cropSetFertilizedFalseTest() {
+        Crop crop = new Crop();
+        crop.setFertilizedFalse();
+        boolean expected = crop.getFertilized();
         Assert.assertFalse(expected);
     }
 }
