@@ -1,4 +1,6 @@
 package Shelter;
 
+import Person.Person;
+
 public class FarmHouse {
 }

@@ -1,4 +1,6 @@
 package Shelter;
 
-public class ChickenCoop {
+import Animal.Chicken;
+
+public class ChickenCoop extends Shelter<Chicken> {
 }
