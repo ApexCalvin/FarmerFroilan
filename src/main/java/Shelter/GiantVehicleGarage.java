@@ -1,4 +1,7 @@
 package Shelter;
 
-public class GiantVehicleGarage {
+import Animal.Horse;
+import FarmVehicle.FarmVehicle;
+
+public class GiantVehicleGarage{
 }
