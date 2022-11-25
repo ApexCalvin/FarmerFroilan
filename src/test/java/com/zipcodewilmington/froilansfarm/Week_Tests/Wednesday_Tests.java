@@ -5,6 +5,7 @@ import Person.Farmer;
 import Person.Pilot;
 import Shelter.FarmHouse;
 import Shelter.Stable;
+import org.junit.Assert;
 import org.junit.Test;
 
 public class Wednesday_Tests {
@@ -46,6 +47,13 @@ public class Wednesday_Tests {
         stable3.add(henry);
         stable3.add(caroline);
 
-        horsey.setRidden();
+        horsey.setRidden(froilan); //TODO - true
+        //froilan.mount(horsey); //TODO - true
+
+        Boolean actual = horsey.isRidden();
+        Assert.assertTrue(actual);
+
+//        Boolean actual2 = froilan.isMounted();
+//        Assert.assertTrue(actual2);
     }
 }
