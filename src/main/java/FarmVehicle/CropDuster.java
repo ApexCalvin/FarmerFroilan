@@ -1,4 +1,30 @@
 package FarmVehicle;
 
-public class CropDuster {
+import Interfaces.Aircraft;
+import Interfaces.Rider;
+
+//public class CropDuster extends FarmVehicle<Pilot> implements Aircraft {
+public class CropDuster extends FarmVehicle implements Aircraft {
+
+    public CropDuster() {
+    }
+
+    public CropDuster(String name) {
+        super(name);
+    }
+
+    @Override
+    public String makeNoise() { //change to String
+        return "Wub-wub wub-wub!";
+    }
+
+    @Override
+    public Rider beRidden() {
+        return null;
+    }
+
+    @Override
+    public void fly() {
+
+    }
 }
