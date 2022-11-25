@@ -30,7 +30,7 @@ public class Person implements Eater, NoiseMaker {
     @Override
     public String makeNoise() {
 
-        return null;
-    }
+        return "Groan";
+
 
 }
