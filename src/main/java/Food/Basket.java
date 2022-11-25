@@ -1,4 +1,9 @@
 package Food;
 
-public class Basket {
+import Crop.Crop;
+import Interfaces.Edible;
+
+import java.util.ArrayList;
+
+public class Basket <T extends Edible> extends ArrayList<T> {
 }
