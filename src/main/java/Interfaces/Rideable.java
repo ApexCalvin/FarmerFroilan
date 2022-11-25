@@ -1,5 +1,5 @@
 package Interfaces;
 
 public interface Rideable {
-    public Rider beRidden();
+    public void setRidden();
 }

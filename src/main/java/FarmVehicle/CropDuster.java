@@ -19,8 +19,7 @@ public class CropDuster extends FarmVehicle implements Aircraft {
     }
 
     @Override
-    public Rider beRidden() {
-        return null;
+    public void setRidden() {
     }
 
     @Override

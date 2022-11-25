@@ -26,7 +26,7 @@ public class Tractor extends FarmVehicle {
     }
 
     @Override
-    public Rider beRidden() {
-        return null;
+    public void setRidden() {
+
     }
 }

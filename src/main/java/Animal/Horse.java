@@ -7,9 +7,18 @@ import Interfaces.Rider;
 import Interfaces.Vegetables;
 
 public class Horse extends Animal implements Rideable, Eater<Vegetables> {
+
+    public boolean ridden = false;
+    public Horse(String name) {
+        super(name);
+    }
+
+    public Horse() {
+    }
+
     @Override
-    public Rider beRidden() {
-        return null;
+    public void setRidden() {
+        ridden = true;
     }
 
 
