@@ -28,8 +28,8 @@ public class Person implements Eater, NoiseMaker {
     }
 
     @Override
-    public void makeNoise() {
-
+    public String makeNoise() {
+        return "Groan";
     }
 
 }

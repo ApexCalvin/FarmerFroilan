@@ -23,8 +23,9 @@ public class Animal implements Eater, NoiseMaker {
     }
 
     @Override
-    public void makeNoise() {
+    public String makeNoise() {
 
+        return null;
     }
 
     @Override
