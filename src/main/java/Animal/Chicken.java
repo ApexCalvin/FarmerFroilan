@@ -16,7 +16,7 @@ public class Chicken extends Animal implements Produce, Eater<Vegetables> {
     @Override
     public boolean isEdible() {
         return false;
-    }
+    } //isFertilized() ?
 
     @Override
     public Edible yield() {
