@@ -7,8 +7,7 @@ import Person.Person;
 //public class CropDuster extends FarmVehicle<Pilot> implements Aircraft {
 public class CropDuster extends FarmVehicle implements Aircraft {
 
-    public CropDuster() {
-    }
+    public CropDuster() {}
 
     public CropDuster(String name) {
         super(name);
@@ -20,11 +19,11 @@ public class CropDuster extends FarmVehicle implements Aircraft {
     }
 
     @Override
-    public void setRidden(Person person) {
-    }
+    public void setRidden(Person person) {}
 
     @Override
-    public void fly() {
+    public boolean isRidden() { return (Boolean) null; }
 
-    }
+    @Override
+    public void fly() {}
 }

@@ -5,8 +5,11 @@ import Person.Farmer;
 import Person.Pilot;
 import Shelter.FarmHouse;
 import Shelter.Stable;
+import com.sun.jdi.Value;
 import org.junit.Assert;
 import org.junit.Test;
+
+import java.util.ArrayList;
 
 public class Wednesday_Tests {
 
@@ -47,13 +50,67 @@ public class Wednesday_Tests {
         stable3.add(henry);
         stable3.add(caroline);
 
-        horsey.setRidden(froilan); //TODO - true
-        //froilan.mount(horsey); //TODO - true
+        for(Horse horse : stable1) {
+            horse.setRidden(froilan);
+            //froilan.dismount(horse);
+        }
 
-        Boolean actual = horsey.isRidden();
-        Assert.assertTrue(actual);
+        for(Horse horse : stable2) {
+            horse.setRidden(froilanda);
+            //froilanda.dismount(horse);
+        }
 
-//        Boolean actual2 = froilan.isMounted();
-//        Assert.assertTrue(actual2);
+        for(Horse horse : stable3) {
+            horse.setRidden(froilan);
+            //froilan.dismount(horse);
+        }
+
+        boolean allIsRidden = true;
+
+        for(Horse horse : stable1) {
+            if(horse.isRidden() == false) {
+                allIsRidden = false;
+            }
+        }
+
+        for(Horse horse : stable2) {
+            if(horse.isRidden() == false) {
+                allIsRidden = false;
+            }
+        }
+
+        for(Horse horse : stable3) {
+            if(horse.isRidden() == false) {
+                allIsRidden = false;
+            }
+        }
+
+        Assert.assertTrue(allIsRidden);
     }
+
+    @Test
+    public void feedHorsesTest() {
+        //GET CORN
+        //TODO - arraylist of cornstalk called CropRow
+        //TODO - arraylist basket.add(froiland in tractor.harvest
+        //TODO -    cornstalk, returning corn obj stored into basket
+
+        //FEED HORSES
+        //TODO - iterate through each stable(123), .remove(corn x3)
+    }
+    //He - 1 corn, 2 tomato, 5 egg
+    //She - 2, 1, 2
+    //total - 3, 3, 7
+    public void feedpeople() {
+        //TODO - create people
+        //TODO - total food fields?  totalCorn = 3;
+        //TODO - froilan.eat(corn);
+        //TODO - create hashmap basket (Corn, CornArrayList)
+        //TODO - Foodcrate, baskets
+
+    }
+
+
+
+
 }

@@ -16,9 +16,7 @@ public class Tractor extends FarmVehicle {
         super(name);
     }
 
-    public void harvest(Crop crop) {
-
-    }
+    public void harvest(Crop crop) {}
 
     @Override
     public String makeNoise() { //change to String
@@ -27,7 +25,8 @@ public class Tractor extends FarmVehicle {
     }
 
     @Override
-    public void setRidden(Person person) {
+    public void setRidden(Person person) {}
 
-    }
+    @Override
+    public boolean isRidden() { return (Boolean) null; }
 }
