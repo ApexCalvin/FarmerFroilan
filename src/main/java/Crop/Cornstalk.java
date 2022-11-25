@@ -1,5 +1,8 @@
 package Crop;
 
-public class Cornstalk extends Crop {
+
+import Food.Corn;
+
+public class Cornstalk extends Crop<Corn> {
 
 }
