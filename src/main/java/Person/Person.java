@@ -2,6 +2,7 @@ package Person;
 
 import Interfaces.Eater;
 import Interfaces.NoiseMaker;
+import Interfaces.Vegetables;
 
 public class Person implements Eater, NoiseMaker {
     public String name;
@@ -21,15 +22,15 @@ public class Person implements Eater, NoiseMaker {
         this.name = name;
     }
 
-
     @Override
     public void eat() {
 
     }
 
     @Override
-    public void makeNoise() {
+    public String makeNoise() {
 
+        return null;
     }
 
 }

@@ -1,5 +1,8 @@
 package Interfaces;
 
-public interface Eater<T extends Edible>{
+import java.util.ArrayList;
+
+public interface Eater<T extends Edible> {
+
     public void eat();
 }
