@@ -2,8 +2,9 @@ package Animal;
 
 import Interfaces.Eater;
 import Interfaces.NoiseMaker;
+import Interfaces.Vegetables;
 
-public class Animal implements Eater, NoiseMaker {
+public class Animal implements Eater<Vegetables>, NoiseMaker {
 
     public String name;
 
