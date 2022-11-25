@@ -16,30 +16,23 @@ public class Person implements Eater<Edible>, NoiseMaker, Rider<Rideable> {
     public String getName() {
         return name;
     }
+
     public void setName(String name) {
         this.name = name;
     }
 
     @Override
-    public void eat() {
-
-    }
+    public void eat() { }
 
     @Override
-    public String makeNoise() {
-
-        return "Groan";
-
-    }
+    public String makeNoise() { return "Groan"; }
 
     @Override
-    public boolean mount(Rideable ride) {
-
-        return (Boolean) null;
-    }
+    public boolean mount(Rideable ride) { return (Boolean) null; }
 
     @Override
-    public boolean dismount(Rideable ride) {
-        return (Boolean) null;
-    }
+    public void dismount(Rideable ride) {}
+
+    @Override
+    public boolean isMounted() { return (Boolean) null; }
 }

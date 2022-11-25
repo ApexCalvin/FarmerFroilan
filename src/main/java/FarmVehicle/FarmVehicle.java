@@ -26,17 +26,14 @@ public class FarmVehicle<T extends Person> implements NoiseMaker, Rideable {
         this.name = name;
     }
 
-    public void operate() {
-
-    }
+    public void operate() {}
 
     @Override
-    public String makeNoise() { //change to String
-
-        return "Vroom!";
-    }
+    public String makeNoise() { return "Vroom!"; }
 
     @Override
-    public void setRidden(Person person) {
-    }
+    public void setRidden(Person person) {}
+
+    @Override
+    public boolean isRidden() { return (Boolean) null; }
 }
