@@ -1,9 +1,7 @@
 package com.zipcodewilmington.froilansfarm.Shelter_Tests;
 
-import Animal.Animal;
+
 import Animal.Horse;
-import Animal.Chicken;
-import Shelter.Shelter;
 import Shelter.Stable;
 import org.junit.Assert;
 import org.junit.Test;
@@ -31,9 +29,6 @@ public class Stable_Tests {
         stable.add(horse3);
         int expected = 3;
         int actual = stable.size();
-
-        horse.setName("Bob");
-        System.out.println(horse.getName());
 
         Assert.assertEquals(expected, actual);
     }
