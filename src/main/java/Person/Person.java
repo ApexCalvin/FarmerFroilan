@@ -1,10 +1,11 @@
 package Person;
 
 import Interfaces.Eater;
+import Interfaces.Edible;
 import Interfaces.NoiseMaker;
 import Interfaces.Vegetables;
 
-public class Person implements Eater, NoiseMaker {
+public class Person implements Eater<Edible>, NoiseMaker {
     public String name;
 
     public Person(String name) {
@@ -32,5 +33,5 @@ public class Person implements Eater, NoiseMaker {
 
         return "Groan";
 
-
+    }
 }
