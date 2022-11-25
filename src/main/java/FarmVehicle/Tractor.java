@@ -3,6 +3,7 @@ package FarmVehicle;
 import Crop.Crop;
 import Interfaces.Rider;
 import Person.Farmer;
+import Person.Person;
 
 //public class Tractor extends FarmVehicle<Farmer> {
 public class Tractor extends FarmVehicle {
@@ -26,7 +27,7 @@ public class Tractor extends FarmVehicle {
     }
 
     @Override
-    public void setRidden() {
+    public void setRidden(Person person) {
 
     }
 }

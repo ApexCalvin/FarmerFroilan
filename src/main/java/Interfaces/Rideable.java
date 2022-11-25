@@ -1,5 +1,7 @@
 package Interfaces;
 
+import Person.Person;
+
 public interface Rideable {
-    public void setRidden();
+    public void setRidden(Person person);
 }

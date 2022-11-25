@@ -1,8 +1,9 @@
 package Person;
 
+import Interfaces.Rideable;
 import Interfaces.Rider;
 
-public class Pilot extends Person implements Rider {
+public class Pilot extends Person {
     public Pilot(String name) {
         super(name);
     }
@@ -21,12 +22,13 @@ public class Pilot extends Person implements Rider {
     }
 
     @Override
-    public void mount() {
+    public boolean mount(Rideable ride) {
 
+        return (Boolean) null;
     }
 
     @Override
-    public void dismount() {
-
+    public boolean dismount(Rideable ride) {
+        return (Boolean) null;
     }
 }

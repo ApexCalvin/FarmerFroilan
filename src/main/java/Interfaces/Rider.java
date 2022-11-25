@@ -1,7 +1,7 @@
 package Interfaces;
 
-public interface Rider <FarmVehicle extends Rideable>{
-    public void mount();
+public interface Rider <T extends Rideable>{
+    public boolean mount(Rideable ride);
 
-    public void dismount();
+    public boolean dismount(Rideable ride);
 }

@@ -37,6 +37,6 @@ public class FarmVehicle<T extends Person> implements NoiseMaker, Rideable {
     }
 
     @Override
-    public void setRidden() {
+    public void setRidden(Person person) {
     }
 }

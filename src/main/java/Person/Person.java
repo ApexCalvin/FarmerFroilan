@@ -1,11 +1,8 @@
 package Person;
 
-import Interfaces.Eater;
-import Interfaces.Edible;
-import Interfaces.NoiseMaker;
-import Interfaces.Vegetables;
+import Interfaces.*;
 
-public class Person implements Eater<Edible>, NoiseMaker {
+public class Person implements Eater<Edible>, NoiseMaker, Rider<Rideable> {
     public String name;
 
     public Person(String name) {
@@ -33,5 +30,16 @@ public class Person implements Eater<Edible>, NoiseMaker {
 
         return "Groan";
 
+    }
+
+    @Override
+    public boolean mount(Rideable ride) {
+
+        return (Boolean) null;
+    }
+
+    @Override
+    public boolean dismount(Rideable ride) {
+        return (Boolean) null;
     }
 }
