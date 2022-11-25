@@ -6,6 +6,13 @@ import Interfaces.Produce;
 import Interfaces.Vegetables;
 
 public class Chicken extends Animal implements Produce, Eater<Vegetables> {
+    public Chicken(String name) {
+        super(name);
+    }
+
+    public Chicken() {
+    }
+
     @Override
     public boolean isEdible() {
         return false;
