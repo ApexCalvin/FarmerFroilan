@@ -7,4 +7,9 @@ public class Tomato implements Vegetables {
     public boolean isEdible() {
         return false;
     }
+
+    @Override
+    public void fertilized() {
+
+    }
 }

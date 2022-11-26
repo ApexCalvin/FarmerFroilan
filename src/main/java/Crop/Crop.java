@@ -21,6 +21,7 @@ public class Crop <T> implements Produce {
 
     public void setFertilizedTrue() {
         hasBeenFertilized = true;
+    //    corn.fertilized();
     }
 
     public boolean getFertilized() {
@@ -34,6 +35,11 @@ public class Crop <T> implements Produce {
     @Override
     public boolean isEdible() {
         return false;
+    }
+
+    @Override
+    public void fertilized() {
+
     }
 
     @Override

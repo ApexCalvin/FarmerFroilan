@@ -9,4 +9,9 @@ public class Egg implements AnimalProduct {
     public boolean isEdible() {
         return false;
     }
+
+    @Override
+    public void fertilized() {
+
+    }
 }

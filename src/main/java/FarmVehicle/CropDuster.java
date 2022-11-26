@@ -1,12 +1,13 @@
 package FarmVehicle;
 
+import Crop.Crop;
 import Interfaces.Aircraft;
 import Interfaces.Rider;
 import Person.Person;
 
 //public class CropDuster extends FarmVehicle<Pilot> implements Aircraft {
 public class CropDuster extends FarmVehicle implements Aircraft {
-
+    public boolean ridden = false;
     public CropDuster() {}
 
     public CropDuster(String name) {
@@ -19,11 +20,22 @@ public class CropDuster extends FarmVehicle implements Aircraft {
     }
 
     @Override
-    public void setRidden(Person person) {}
+    public void setRidden(Person person) {
+        if (person.isMounted()== false) {
+            ridden = true;
+        }else {
+            ridden = false;
+        }
+    }
 
     @Override
-    public boolean isRidden() { return (Boolean) null; }
+    public boolean isRidden() { return ridden; }
 
     @Override
-    public void fly() {}
+    public void fly() {
+    }
+    public void fertilize(Crop crop) {
+        if(ridden == true) crop.setFertilizedTrue();
+    }
+
 }
