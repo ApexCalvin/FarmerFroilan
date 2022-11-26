@@ -1,12 +1,15 @@
 package FarmVehicle;
 
 import Crop.Crop;
+import Interfaces.Edible;
 import Interfaces.Rider;
 import Person.Farmer;
 import Person.Person;
 
 //public class Tractor extends FarmVehicle<Farmer> {
 public class Tractor extends FarmVehicle {
+
+    boolean vehicleMounted = false;
 
     public Tractor() {
         super("");
@@ -16,7 +19,12 @@ public class Tractor extends FarmVehicle {
         super(name);
     }
 
-    public void harvest(Crop crop) {}
+    public Edible harvest(Crop crop) {
+        if (vehicleMounted == true){
+            return crop.yield();
+        }
+        return null;
+    }
 
     @Override
     public String makeNoise() { //change to String
@@ -25,8 +33,14 @@ public class Tractor extends FarmVehicle {
     }
 
     @Override
-    public void setRidden(Person person) {}
+    public void setRidden(Person person) {
+        if(person.isMounted() == false){
+            vehicleMounted = true;
+        } else {
+            vehicleMounted = false;
+        }
+    }
 
     @Override
-    public boolean isRidden() { return (Boolean) null; }
+    public boolean isRidden() { return vehicleMounted; }
 }

@@ -2,9 +2,13 @@ package com.zipcodewilmington.froilansfarm.Week_Tests;
 
 import Animal.Horse;
 import Crop.Cornstalk;
+import Crop.Crop;
+import Crop.CropRow;
 import Crop.TomatoPlant;
 import FarmVehicle.CropDuster;
+import FarmVehicle.Tractor;
 import Food.Corn;
+import Food.CornBasket;
 import Person.Farmer;
 import Person.Pilot;
 import Shelter.FarmHouse;
@@ -175,5 +179,39 @@ public class Wednesday_Tests {
         cropDuster.fertilize(cornstalk);
         boolean actual = cornstalk.getFertilized();
         Assert.assertTrue(actual);
+    }
+
+    @Test
+    public void harvestCropFlagTest(){
+        Farmer farmer = new Farmer("Froiland");
+        Tractor tractor = new Tractor();
+        CropRow croprow = new CropRow();
+        Cornstalk cornstalk1 = new Cornstalk();
+        Cornstalk cornstalk2 = new Cornstalk();
+        Cornstalk cornstalk3 = new Cornstalk();
+        CornBasket cb = new CornBasket();
+        croprow.add(cornstalk1);
+        croprow.add(cornstalk2);
+        croprow.add(cornstalk3);
+        farmer.mount(tractor);
+        /*for (Crop cs : croprow) {
+            tractor.harvest(cs);
+        }*/
+        tractor.harvest(cornstalk1);
+        Boolean actual = cornstalk1.getHarvested();
+        Assert.assertTrue(actual);
+    }
+
+    @Test
+    public void harvestCropTest(){
+        Farmer farmer = new Farmer("Froiland");
+        Tractor tractor = new Tractor();
+        Cornstalk cornstalk = new Cornstalk();
+        CornBasket cb = new CornBasket();
+        farmer.mount(tractor);
+        cb.add((Corn) tractor.harvest(cornstalk));
+        int actual = cb.size();
+        int expected = 1;
+        Assert.assertEquals(actual, expected);
     }
 }
