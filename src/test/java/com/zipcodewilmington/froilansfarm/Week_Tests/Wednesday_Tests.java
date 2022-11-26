@@ -1,6 +1,10 @@
 package com.zipcodewilmington.froilansfarm.Week_Tests;
 
 import Animal.Horse;
+import Crop.Cornstalk;
+import Crop.TomatoPlant;
+import FarmVehicle.CropDuster;
+import Food.Corn;
 import Person.Farmer;
 import Person.Pilot;
 import Shelter.FarmHouse;
@@ -135,8 +139,41 @@ public class Wednesday_Tests {
         //TODO - Foodcrate, baskets
 
     }
-
-
-
-
+    @Test
+    public void fertilizeTest() {
+        Pilot pilot = new Pilot("Froilanda");
+        CropDuster cropDuster = new CropDuster();
+        Cornstalk cornstalk = new Cornstalk();
+        // Pilot does not have to ride Cropduster
+        cropDuster.fertilize(cornstalk);
+        boolean actual = cornstalk.getFertilized();
+        Assert.assertTrue(actual);
+    }
+    @Test
+    public void fertilizeTest2() {
+        Pilot pilot = new Pilot("Froilanda");
+        CropDuster cropDuster = new CropDuster();
+        TomatoPlant tomatoPlant = new TomatoPlant();
+        cropDuster.fertilize(tomatoPlant);
+        boolean actual = tomatoPlant.getFertilized();
+        Assert.assertTrue(actual);
+    }
+    @Test
+    public void cropDusterRiddenTest() {
+        Pilot pilot = new Pilot("Froilanda");
+        CropDuster cropDuster = new CropDuster();
+        pilot.mount(cropDuster);
+        boolean actual = cropDuster.isRidden();
+        Assert.assertTrue(actual);
+    }
+    @Test
+    public void cropDusterRiddenTest2() {
+        Pilot pilot = new Pilot("Froilanda");
+        CropDuster cropDuster = new CropDuster();
+        Cornstalk cornstalk = new Cornstalk();
+        pilot.mount(cropDuster);
+        cropDuster.fertilize(cornstalk);
+        boolean actual = cornstalk.getFertilized();
+        Assert.assertTrue(actual);
+    }
 }

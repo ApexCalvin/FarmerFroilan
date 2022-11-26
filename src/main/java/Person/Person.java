@@ -41,5 +41,6 @@ public class Person implements Eater<Edible>, NoiseMaker, Rider<Rideable> {
 
     @Override
     public boolean isMounted() {
-        return mounted; }
+        return mounted;
+    }
 }
