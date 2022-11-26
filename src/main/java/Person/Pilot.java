@@ -22,12 +22,4 @@ public class Pilot extends Person {
         return "Weeeee";
     }
 
-    @Override
-    public boolean mount(Rideable ride) {
-            mounted = true;
-            return true;
-    }
-
-    @Override
-    public void dismount(Rideable ride) {}
 }
