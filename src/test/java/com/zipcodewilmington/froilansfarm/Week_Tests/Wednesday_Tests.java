@@ -12,8 +12,31 @@ import org.junit.Test;
 import java.util.ArrayList;
 
 public class Wednesday_Tests {
-
     @Test
+    public void rideHorseTest2() {
+        Farmer froilan = new Farmer("Froilan");
+
+        Stable stable1 = new Stable();
+
+        Horse horsey = new Horse();
+        Horse fred = new Horse();
+        Horse eugene = new Horse();
+
+        stable1.add(horsey);
+        stable1.add(fred);
+        stable1.add(eugene);
+
+        //if all horses are ridden, ridden value is true
+        froilan.mount(horsey);
+        froilan.dismount();
+        froilan.mount(fred);
+        froilan.dismount();
+        froilan.mount(eugene);
+
+        Boolean actual = eugene.isRidden();
+        Assert.assertTrue(actual);
+    }
+        @Test
     public void rideHorseTest() {
         Farmer froilan = new Farmer("Froilan");
         Pilot froilanda = new Pilot("Froilanda");
@@ -51,18 +74,21 @@ public class Wednesday_Tests {
         stable3.add(caroline);
 
         for(Horse horse : stable1) {
-            horse.setRidden(froilan);
-            //froilan.dismount(horse);
+//            horse.setRidden(froilan);
+            froilan.mount(horse);
+            froilan.dismount();
         }
 
         for(Horse horse : stable2) {
-            horse.setRidden(froilanda);
-            //froilanda.dismount(horse);
+//            horse.setRidden(froilanda);
+            froilanda.mount(horse);
+            froilanda.dismount();
         }
 
         for(Horse horse : stable3) {
-            horse.setRidden(froilan);
-            //froilan.dismount(horse);
+//            horse.setRidden(froilan);
+            froilan.mount(horse);
+            froilan.dismount();
         }
 
         boolean allIsRidden = true;

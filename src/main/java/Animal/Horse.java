@@ -28,8 +28,15 @@ public class Horse extends Animal implements Rideable, Eater<Vegetables> {
 
     @Override
     public void setRidden(Person person) {
-        //if (person.isMounted() == false) {}
-            ridden = person.mount(this);
+        if (person.isMounted() == false) {
+            ridden = true;
+//            person.mount(this);
+        } else {
+            ridden = false;
+//            person.dismount();
+        }
+//        person.mount(this);
+//            ridden = person.isMounted();
 
     }
 

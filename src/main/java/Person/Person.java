@@ -4,6 +4,7 @@ import Interfaces.*;
 
 public class Person implements Eater<Edible>, NoiseMaker, Rider<Rideable> {
     public String name;
+    public Boolean mounted = false;
 
     public Person(String name) {
         this.name = name;
@@ -27,12 +28,18 @@ public class Person implements Eater<Edible>, NoiseMaker, Rider<Rideable> {
     @Override
     public String makeNoise() { return "Groan"; }
 
-    @Override
-    public boolean mount(Rideable ride) { return (Boolean) null; }
+    public void mount(Rideable ride) {
+        ride.setRidden(this);
+        mounted = true;
+//        return true;
+    }
 
     @Override
-    public void dismount(Rideable ride) {}
+    public void dismount() {
+        mounted = false;
+    }
 
     @Override
-    public boolean isMounted() { return (Boolean) null; }
+    public boolean isMounted() {
+        return mounted; }
 }
