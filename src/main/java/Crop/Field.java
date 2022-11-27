@@ -1,4 +1,6 @@
 package Crop;
 
-public class Field {
+import java.util.ArrayList;
+
+public class Field <T> extends ArrayList<T> {
 }
