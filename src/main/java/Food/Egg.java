@@ -7,11 +7,11 @@ public class Egg implements AnimalProduct {
     Boolean isEdible = false;
     @Override
     public boolean isEdible() {
-        return false;
+        return isEdible;
     }
 
     @Override
     public void fertilized() {
-
+        isEdible = true;
     }
 }

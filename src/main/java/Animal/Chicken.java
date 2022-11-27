@@ -1,11 +1,13 @@
 package Animal;
 
+import Food.Egg;
 import Interfaces.Eater;
 import Interfaces.Edible;
 import Interfaces.Produce;
 import Interfaces.Vegetables;
 
 public class Chicken extends Animal implements Produce, Eater<Vegetables> {
+    public boolean fertilized = false;
     public Chicken(String name) {
         super(name);
     }
@@ -20,12 +22,21 @@ public class Chicken extends Animal implements Produce, Eater<Vegetables> {
 
     @Override
     public void fertilized() {
-
+        fertilized = true;
+    }
+    public boolean getFertilized() {
+        return fertilized;
     }
 
     @Override
     public Edible yield() {
-        return null;
+        Egg egg = new Egg();
+        if (fertilized == true) {
+            egg.fertilized();
+            return egg;
+        } else {
+            return egg;
+        }
     }
 
     @Override

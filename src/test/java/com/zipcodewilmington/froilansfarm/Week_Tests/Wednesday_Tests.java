@@ -1,5 +1,6 @@
 package com.zipcodewilmington.froilansfarm.Week_Tests;
 
+import Animal.Chicken;
 import Animal.Horse;
 import Crop.Cornstalk;
 import Crop.Crop;
@@ -7,12 +8,12 @@ import Crop.CropRow;
 import Crop.TomatoPlant;
 import FarmVehicle.CropDuster;
 import FarmVehicle.Tractor;
-import Food.Corn;
-import Food.CornBasket;
+import Food.*;
 import Person.Farmer;
 import Person.Pilot;
 import Shelter.FarmHouse;
 import Shelter.Stable;
+import com.zipcodewilmington.froilansfarm.Farm;
 import org.junit.Assert;
 import org.junit.Test;
 import Crop.Field;
@@ -371,5 +372,60 @@ public class Wednesday_Tests {
 
         Assert.assertTrue(allIsFertilized);
 
+    }
+
+    @Test
+    public void botanistTest() {
+        Farmer froilan = new Farmer();
+        CropRow cr = new CropRow();
+        Crop crop = new Crop();
+        froilan.plantCrop(cr, crop);
+        int actual = cr.size();
+        int expected = 1;
+        Assert.assertEquals(expected, actual);
+    }
+    @Test
+    public void cornStalkBotanistTest() {
+        Farmer froilan = new Farmer();
+        CropRow cr = new CropRow();
+        Cornstalk cs1 = new Cornstalk();
+        Cornstalk cs2 = new Cornstalk();
+        froilan.plantCrop(cr, cs1);
+        froilan.plantCrop(cr, cs2);
+        int actual = cr.size();
+        int expected = 2;
+        Assert.assertEquals(expected, actual);
+    }
+    @Test
+    public void fertilizeChickenAndStoreTest() {
+        Chicken chick = new Chicken();
+        EggBasket eggBask = new EggBasket();
+        chick.fertilized();
+        eggBask.add((Egg) chick.yield());
+        int actual = eggBask.size();
+        int expected = 1;
+        Assert.assertEquals(expected, actual);
+    }
+    @Test
+    public void chickenFertilizedTest() {
+        Chicken chick = new Chicken();
+        chick.fertilized();
+        boolean actual = chick.getFertilized();
+        Assert.assertTrue(actual);
+    }
+    @Test
+    public void eggNotFertilizedTest() {
+        Chicken chick = new Chicken();
+        Egg egg = (Egg) chick.yield();
+        boolean actual = egg.isEdible();
+        Assert.assertFalse(actual);
+    }
+    @Test
+    public void eggFertilizedTest() {
+        Chicken chick = new Chicken();
+        chick.fertilized();
+        Egg egg = (Egg) chick.yield();
+        boolean actual = egg.isEdible();
+        Assert.assertTrue(actual);
     }
 }
