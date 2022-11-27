@@ -30,10 +30,13 @@ public class Chicken extends Animal implements Produce, Eater<Vegetables> {
 
     @Override
     public Edible yield() {
+        Egg egg = new Egg();
         if (fertilized == true) {
-            return new Egg();
+            egg.fertilized();
+            return egg;
+        } else {
+            return egg;
         }
-        return null;
     }
 
     @Override

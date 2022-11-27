@@ -397,7 +397,7 @@ public class Wednesday_Tests {
         Assert.assertEquals(expected, actual);
     }
     @Test
-    public void fertilizeChickenTest() {
+    public void fertilizeChickenAndStoreTest() {
         Chicken chick = new Chicken();
         EggBasket eggBask = new EggBasket();
         chick.fertilized();
@@ -405,5 +405,27 @@ public class Wednesday_Tests {
         int actual = eggBask.size();
         int expected = 1;
         Assert.assertEquals(expected, actual);
+    }
+    @Test
+    public void chickenFertilizedTest() {
+        Chicken chick = new Chicken();
+        chick.fertilized();
+        boolean actual = chick.getFertilized();
+        Assert.assertTrue(actual);
+    }
+    @Test
+    public void eggNotFertilizedTest() {
+        Chicken chick = new Chicken();
+        Egg egg = (Egg) chick.yield();
+        boolean actual = egg.isEdible();
+        Assert.assertFalse(actual);
+    }
+    @Test
+    public void eggFertilizedTest() {
+        Chicken chick = new Chicken();
+        chick.fertilized();
+        Egg egg = (Egg) chick.yield();
+        boolean actual = egg.isEdible();
+        Assert.assertTrue(actual);
     }
 }
