@@ -384,4 +384,16 @@ public class Wednesday_Tests {
         int expected = 1;
         Assert.assertEquals(expected, actual);
     }
+    @Test
+    public void cornStalkBotanistTest() {
+        Farmer froilan = new Farmer();
+        CropRow cr = new CropRow();
+        Cornstalk cs1 = new Cornstalk();
+        Cornstalk cs2 = new Cornstalk();
+        froilan.plantCrop(cr, cs1);
+        froilan.plantCrop(cr, cs2);
+        int actual = cr.size();
+        int expected = 2;
+        Assert.assertEquals(expected, actual);
+    }
 }
