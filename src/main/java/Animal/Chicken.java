@@ -1,5 +1,6 @@
 package Animal;
 
+import Food.Basket;
 import Food.Egg;
 import Interfaces.Eater;
 import Interfaces.Edible;
@@ -45,8 +46,5 @@ public class Chicken extends Animal implements Produce, Eater<Vegetables> {
         return "bok bok";
     }
 
-    @Override
-    public void eat() {
-        super.eat();
-    }
+    public void eat(Basket basket, Edible edible) {}
 }

@@ -1,7 +1,9 @@
 package Animal;
 
 
+import Food.Basket;
 import Interfaces.Eater;
+import Interfaces.Edible;
 import Interfaces.Rideable;
 import Interfaces.Vegetables;
 import Person.Person;
@@ -21,10 +23,7 @@ public class Horse extends Animal implements Rideable, Eater<Vegetables> {
         return "neighhh";
     }
 
-    @Override
-    public void eat() {
-        super.eat();
-    }
+    public void eat(Basket basket, Edible edible) {}
 
     @Override
     public void setRidden(Person person) {

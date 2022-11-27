@@ -2,7 +2,9 @@ package Person;
 
 import Crop.Crop;
 import Crop.CropRow;
+import Food.Basket;
 import Interfaces.Botanist;
+import Interfaces.Edible;
 
 public class Farmer extends Person implements Botanist {
     public boolean mounted = false;
@@ -13,10 +15,7 @@ public class Farmer extends Person implements Botanist {
 
     public Farmer() { }
 
-    @Override
-    public void eat() {
-        super.eat();
-    }
+    public void eat(Basket basket, Edible edible) {}
 
     @Override
     public String makeNoise() {

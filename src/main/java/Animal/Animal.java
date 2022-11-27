@@ -1,10 +1,14 @@
 package Animal;
 
+import Food.Basket;
 import Interfaces.Eater;
+import Interfaces.Edible;
 import Interfaces.NoiseMaker;
 import Interfaces.Vegetables;
 
 public class Animal implements Eater<Vegetables>, NoiseMaker {
+
+    public boolean fed = false;
 
     public String name;
 
@@ -29,8 +33,15 @@ public class Animal implements Eater<Vegetables>, NoiseMaker {
         return null;
     }
 
-    @Override
-    public void eat() {
+    public boolean isFed() {
+        return fed;
+    }
 
+    @Override
+    public void eat(Basket basket, int amount) {
+        fed = true;
+        for (int i = 0; i < amount; i++) {
+            basket.remove(i);
+        }
     }
 }

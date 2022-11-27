@@ -1,9 +1,13 @@
 package Person;
 
+import Food.Basket;
 import Interfaces.*;
 
 public class Person implements Eater<Edible>, NoiseMaker, Rider<Rideable> {
     public String name;
+
+    public boolean fed = false;
+
     public Boolean mounted = false;
 
     public Person(String name) {
@@ -23,7 +27,16 @@ public class Person implements Eater<Edible>, NoiseMaker, Rider<Rideable> {
     }
 
     @Override
-    public void eat() { }
+    public void eat(Basket basket, int amount) {
+        fed = true;
+        for (int i = 0; i < amount; i++) {
+            basket.remove(i);
+        }
+    }
+
+    public boolean isFed() {
+        return fed;
+    }
 
     @Override
     public String makeNoise() { return "Groan"; }
