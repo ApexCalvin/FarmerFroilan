@@ -1,6 +1,8 @@
 package Person;
 
 import FarmVehicle.CropDuster;
+import Food.Basket;
+import Interfaces.Edible;
 import Interfaces.Rideable;
 
 public class Pilot extends Person {
@@ -13,10 +15,7 @@ public class Pilot extends Person {
     public Pilot() {
     }
 
-    @Override
-    public void eat() {
-        super.eat();
-    }
+    public void eat(Basket basket, Edible edible) {}
 
     @Override
     public String makeNoise() {
