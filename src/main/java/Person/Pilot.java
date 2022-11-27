@@ -1,5 +1,6 @@
 package Person;
 
+import FarmVehicle.CropDuster;
 import Interfaces.Rideable;
 
 public class Pilot extends Person {
@@ -21,5 +22,14 @@ public class Pilot extends Person {
     public String makeNoise() {
         return "Weeeee";
     }
+    @Override
+    public void mount(Rideable ride) {
+        ride.setRidden(this);
+        CropDuster cd = (CropDuster) ride;
+        cd.fly();
+        mounted = true;
+//        return true;
+    }
 
+    //Testing
 }

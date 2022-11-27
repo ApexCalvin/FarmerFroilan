@@ -13,9 +13,9 @@ import Person.Farmer;
 import Person.Pilot;
 import Shelter.FarmHouse;
 import Shelter.Stable;
-import com.sun.jdi.Value;
 import org.junit.Assert;
 import org.junit.Test;
+import Crop.Field;
 
 import java.util.ArrayList;
 
@@ -213,5 +213,163 @@ public class Wednesday_Tests {
         int actual = cb.size();
         int expected = 1;
         Assert.assertEquals(actual, expected);
+    }
+
+    @Test
+    public void cropDusterFertilizeTest() {
+        Pilot pilot = new Pilot("Froilanda");
+        CropDuster cropDuster = new CropDuster();
+        Cornstalk cornstalk = new Cornstalk();
+        pilot.mount(cropDuster);
+        cropDuster.fertilize(cornstalk);
+        boolean actual = cornstalk.getFertilized();
+        Assert.assertTrue(actual);
+    }
+
+    @Test
+    public void cropDusterFlyTest() {
+        Pilot pilot = new Pilot("Froilanda");
+        CropDuster cropDuster = new CropDuster();
+        Cornstalk cornstalk = new Cornstalk();
+        pilot.mount(cropDuster);
+        cropDuster.fertilize(cornstalk);
+        boolean actual = cornstalk.getFertilized();
+        Assert.assertTrue(actual);
+//        On Monday, his sister, Froilanda uses the CropDuster to fly over the Field and fertilize each of the CropRow
+
+    }
+
+    @Test
+    public void cropDusterFlyTest_checkFly() {
+        Pilot pilot = new Pilot("Froilanda");
+        CropDuster cropDuster = new CropDuster();
+        pilot.mount(cropDuster);
+        boolean actual = cropDuster.getFly();
+        Assert.assertTrue(actual);
+
+    }
+
+    @Test
+    public void cropDusterFlyTest_checkLandPlane() {
+        Pilot pilot = new Pilot("Froilanda");
+        CropDuster cropDuster = new CropDuster();
+        pilot.mount(cropDuster);
+        cropDuster.landPlane(); //needs to happen!!
+        boolean actual = cropDuster.getFly();
+        Assert.assertFalse(actual);
+
+    }
+
+    @Test
+    public void fieldAndCropRowTest() {
+        Field field = new Field();
+        CropRow cornRow = new CropRow();
+        CropRow tomatoRow = new CropRow();
+        field.add(cornRow);
+        field.add(tomatoRow);
+        Cornstalk cornstalk1 = new Cornstalk();
+        Cornstalk cornstalk2 = new Cornstalk();
+        Cornstalk cornstalk3 = new Cornstalk();
+        cornRow.add(cornstalk1);
+        cornRow.add(cornstalk2);
+        cornRow.add(cornstalk3);
+
+        int expected = 2;
+        int actual = field.size();
+        Assert.assertEquals(expected, actual);
+
+
+    }
+
+    @Test
+    public void fieldAndCropRowTest_CropRowSize() {
+        Field field = new Field();
+        CropRow cornRow = new CropRow();
+        CropRow tomatoRow = new CropRow();
+        field.add(cornRow);
+        field.add(tomatoRow);
+        Cornstalk cornstalk1 = new Cornstalk();
+        Cornstalk cornstalk2 = new Cornstalk();
+        Cornstalk cornstalk3 = new Cornstalk();
+        cornRow.add(cornstalk1);
+        cornRow.add(cornstalk2);
+        cornRow.add(cornstalk3);
+
+        CropRow getCornField = (CropRow) field.get(0);
+        int expected = 3;
+        int actual = getCornField.size();
+        Assert.assertEquals(expected, actual);
+
+
+    }
+
+    @Test
+    public void fieldAndCropRowTest_TomatoRowSize() {
+        Field field = new Field();
+        CropRow cornRow = new CropRow();
+        CropRow tomatoRow = new CropRow();
+        field.add(cornRow);
+        field.add(tomatoRow);
+        Cornstalk cornstalk1 = new Cornstalk();
+        Cornstalk cornstalk2 = new Cornstalk();
+        Cornstalk cornstalk3 = new Cornstalk();
+        cornRow.add(cornstalk1);
+        cornRow.add(cornstalk2);
+        cornRow.add(cornstalk3);
+
+        CropRow getTomatoRow = (CropRow) field.get(1);
+        int expected = 0;
+        int actual = getTomatoRow.size();
+        Assert.assertEquals(expected, actual);
+
+    }
+
+
+    @Test
+    public void fertilizeCropRowsInField_Test() {
+        Pilot pilot = new Pilot("Froilanda");
+        CropDuster cropDuster = new CropDuster();
+
+        Field field = new Field();
+        CropRow cornRow = new CropRow();
+        CropRow tomatoRow = new CropRow();
+        field.add(cornRow);
+        field.add(tomatoRow);
+        Cornstalk cornstalk1 = new Cornstalk();
+        Cornstalk cornstalk2 = new Cornstalk();
+        Cornstalk cornstalk3 = new Cornstalk();
+        cornRow.add(cornstalk1);
+        cornRow.add(cornstalk2);
+        cornRow.add(cornstalk3);
+
+        pilot.mount(cropDuster);
+
+        //pilot flies over the field
+        //fertilizes each crop of the cropRow in the field
+
+        for (int i = 0; i < field.size(); i++) {
+            CropRow cropRowTemp = (CropRow) field.get(i);
+            for (int j = 0; j < cropRowTemp.size(); j++) {
+                Crop cropTemp = (Crop) cropRowTemp.get(j);
+                cropDuster.fertilize(cropTemp);
+            }
+        }
+
+        boolean allIsFertilized = true;
+
+        for (int i = 0; i < field.size(); i++) {
+            CropRow cropRowTemp = (CropRow) field.get(i);
+            for (int j = 0; j < cropRowTemp.size(); j++) {
+                Crop cropTemp = (Crop) cropRowTemp.get(j);
+                if (cropTemp.getFertilized() == false) {
+                    allIsFertilized = false;
+                    break;
+                }
+            }
+        }
+
+
+        Assert.assertTrue(allIsFertilized);
+
     }
 }
