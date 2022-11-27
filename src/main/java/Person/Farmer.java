@@ -1,7 +1,8 @@
 package Person;
 
+import Crop.Crop;
+import Crop.CropRow;
 import Interfaces.Botanist;
-import Interfaces.Rideable;
 
 public class Farmer extends Person implements Botanist {
     public boolean mounted = false;
@@ -13,9 +14,6 @@ public class Farmer extends Person implements Botanist {
     public Farmer() { }
 
     @Override
-    public void plantCrop() { }
-
-    @Override
     public void eat() {
         super.eat();
     }
@@ -23,5 +21,10 @@ public class Farmer extends Person implements Botanist {
     @Override
     public String makeNoise() {
         return "Hidy Hooo";
+    }
+
+    @Override
+    public void plantCrop(CropRow cr, Crop crop) {
+        cr.add(crop);
     }
 }

@@ -13,6 +13,7 @@ import Person.Farmer;
 import Person.Pilot;
 import Shelter.FarmHouse;
 import Shelter.Stable;
+import com.zipcodewilmington.froilansfarm.Farm;
 import org.junit.Assert;
 import org.junit.Test;
 import Crop.Field;
@@ -371,5 +372,16 @@ public class Wednesday_Tests {
 
         Assert.assertTrue(allIsFertilized);
 
+    }
+
+    @Test
+    public void botanistTest() {
+        Farmer froilan = new Farmer();
+        CropRow cr = new CropRow();
+        Crop crop = new Crop();
+        froilan.plantCrop(cr, crop);
+        int actual = cr.size();
+        int expected = 1;
+        Assert.assertEquals(expected, actual);
     }
 }
