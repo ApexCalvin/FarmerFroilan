@@ -1,5 +1,6 @@
 package com.zipcodewilmington.froilansfarm.Week_Tests;
 
+import Animal.Chicken;
 import Animal.Horse;
 import Crop.Cornstalk;
 import Crop.Crop;
@@ -7,8 +8,7 @@ import Crop.CropRow;
 import Crop.TomatoPlant;
 import FarmVehicle.CropDuster;
 import FarmVehicle.Tractor;
-import Food.Corn;
-import Food.CornBasket;
+import Food.*;
 import Person.Farmer;
 import Person.Pilot;
 import Shelter.FarmHouse;
@@ -394,6 +394,16 @@ public class Wednesday_Tests {
         froilan.plantCrop(cr, cs2);
         int actual = cr.size();
         int expected = 2;
+        Assert.assertEquals(expected, actual);
+    }
+    @Test
+    public void fertilizeChickenTest() {
+        Chicken chick = new Chicken();
+        EggBasket eggBask = new EggBasket();
+        chick.fertilized();
+        eggBask.add((Egg) chick.yield());
+        int actual = eggBask.size();
+        int expected = 1;
         Assert.assertEquals(expected, actual);
     }
 }
