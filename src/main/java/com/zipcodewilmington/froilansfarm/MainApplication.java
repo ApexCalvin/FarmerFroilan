@@ -76,33 +76,37 @@ public class MainApplication {
         Stable stable2 = new Stable();
         Stable stable3 = new Stable();
 
-        for (int i = 0; i < 3; i++) {
-            stable1.add(new Horse());
-        }
-        System.out.println("There are " + stable1.size() + " horses in stable 1");
-        for (int i = 0; i < 3; i++) {
-            stable2.add(new Horse());
-        }
-        System.out.println("There are " + stable2.size() + " horses in stable 2");
-        for (int i = 0; i < 4; i++) {
-            stable3.add(new Horse());
-        }
-        System.out.println("There are " + stable3.size() + " horses in stable 3");
+//        for (int i = 0; i < 3; i++) {
+//            stable1.add(new Horse());
+//        }
+//        System.out.println("There are " + stable1.size() + " horses in stable 1");
+//        for (int i = 0; i < 3; i++) {
+//            stable2.add(new Horse());
+//        }
+//        System.out.println("There are " + stable2.size() + " horses in stable 2");
+//        for (int i = 0; i < 4; i++) {
+//            stable3.add(new Horse());
+//        }
+//        System.out.println("There are " + stable3.size() + " horses in stable 3");
+        MorningRoutine morningRoutine = new MorningRoutine();
+        morningRoutine.addHorsesToStable();
 
-        for(Horse horse : stable1) {
-            froilan.mount(horse);
-            froilan.dismount();
-        }
+//        for(Horse horse : stable1) {
+//            froilan.mount(horse);
+//            froilan.dismount();
+//        }
+//
+//        for(Horse horse : stable2) {
+//            froilanda.mount(horse);
+//            froilanda.dismount();
+//        }
+//
+//        for(Horse horse : stable3) {
+//            froilan.mount(horse);
+//            froilan.dismount();
+//        }
 
-        for(Horse horse : stable2) {
-            froilanda.mount(horse);
-            froilanda.dismount();
-        }
-
-        for(Horse horse : stable3) {
-            froilan.mount(horse);
-            froilan.dismount();
-        }
+        morningRoutine.rideHorses();
 
         boolean allIsRidden = true;
 
@@ -210,9 +214,9 @@ public class MainApplication {
         froilan.eat(tb, 2);
         froilan.eat(eggBasket, 5);
 
-        froilan.eat(cb, 2);
-        froilan.eat(tb, 1);
-        froilan.eat(eggBasket, 2);
+        froilanda.eat(cb, 2);
+        froilanda.eat(tb, 1);
+        froilanda.eat(eggBasket, 2);
 
         if (froilan.isFed() == true && froilanda.isFed() == true) {
             System.out.println("Froilan and Froilanda have eaten");
