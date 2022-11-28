@@ -31,6 +31,8 @@ public class MainApplication {
 
         CropRow cornRow = new CropRow();
         CropRow tomatoRow = new CropRow();
+        TomatoPlant tomatoPlant = new TomatoPlant();
+        Cornstalk cornstalk = new Cornstalk();
         Field field = new Field();
         field.add(cornRow);
         field.add(tomatoRow);
@@ -250,6 +252,31 @@ public class MainApplication {
         }
 
         System.out.println("There are " + cb.size() + " ears of corn in your corn basket");
+
+        System.out.println("Morning routine done!\n");
+        System.out.println("\nSunday work summary:");
+
+
+        //TODO: Check this!!! DOES HARVEST REMOVE FROM ROW?
+        System.out.println("Froilan planted tomatoes and corn");
+        CropRow tomatoRowRef = (CropRow) field.get(1);
+        for (int i = 0; i < 30; i++) {
+            froilan.plantCrop(tomatoRowRef, new TomatoPlant());
+        }
+        CropRow cornRowRef = (CropRow) field.get(1);
+        for (int i = 0; i < 30; i++) {
+            froilan.plantCrop(cornRowRef, new Cornstalk());
+        }
+
+        System.out.println("There are " + cornRowRef.size() + " corn stalk in your corn row");
+        System.out.println("There are " + tomatoRowRef.size() + " tomatoes in your tomato row");
+
+//        System.out.println("\nMonday work summary:"); // already done above. a method can be made.
+
+
+
+
+//        System.out.println("\nTuesday work summary:");
 
     }
 }
