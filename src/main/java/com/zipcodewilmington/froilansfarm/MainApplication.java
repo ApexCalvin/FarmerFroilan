@@ -202,7 +202,7 @@ public class MainApplication {
 
         System.out.println("Egg basket has " + eggBasket.size() + " eggs");
 
-        froilan.eat()
+        //eat
 
 
     }

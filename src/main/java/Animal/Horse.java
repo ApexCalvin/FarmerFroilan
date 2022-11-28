@@ -11,11 +11,23 @@ import Person.Person;
 public class Horse extends Animal implements Rideable, Eater<Vegetables> {
     public boolean ridden = false;
 
+    public String name;
+
     public Horse(String name) {
-        super(name);
+        this.name = name;
     }
 
-    public Horse() { }
+    public Horse() {
+        name = "";
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
 
     @Override
     public String makeNoise() {
