@@ -45,7 +45,7 @@ public class Reference_Tests {
         @Test
     public void rideHorseTest() {
         Farmer froilan = new Farmer("Froilan");
-        Pilot froilanda = new Pilot("Froilanda");
+        Farmer froilanda = new Farmer("Froilanda");
 
         FarmHouse fh = new FarmHouse();
         fh.add(froilan);
