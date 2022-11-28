@@ -108,31 +108,33 @@ public class MainApplication {
 
         morningRoutine.rideHorses();
 
-        boolean allIsRidden = true;
+//        boolean allIsRidden = true;
+//
+//        for(Horse horse : stable1) {
+//            if(horse.isRidden() == false) {
+//                allIsRidden = false;
+//            }
+//        }
+//
+//        for(Horse horse : stable2) {
+//            if(horse.isRidden() == false) {
+//                allIsRidden = false;
+//            }
+//        }
+//
+//        for(Horse horse : stable3) {
+//            if(horse.isRidden() == false) {
+//                allIsRidden = false;
+//            }
+//        }
+//
+//        if(allIsRidden == true) {
+//            System.out.println("All horses have been ridden");
+//        } else if (allIsRidden == false) {
+//            System.out.println("All horses have not been ridden");
+//        }
 
-        for(Horse horse : stable1) {
-            if(horse.isRidden() == false) {
-                allIsRidden = false;
-            }
-        }
-
-        for(Horse horse : stable2) {
-            if(horse.isRidden() == false) {
-                allIsRidden = false;
-            }
-        }
-
-        for(Horse horse : stable3) {
-            if(horse.isRidden() == false) {
-                allIsRidden = false;
-            }
-        }
-
-        if(allIsRidden == true) {
-            System.out.println("All horses have been ridden");
-        } else if (allIsRidden == false) {
-            System.out.println("All horses have not been ridden");
-        }
+        checkHorsesRidden()
 
         pilot.mount(cropDuster);
 

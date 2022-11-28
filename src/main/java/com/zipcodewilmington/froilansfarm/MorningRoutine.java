@@ -64,7 +64,7 @@ public class MorningRoutine {
         }
     }
 
-    public void checkHorsesRidden(){
+    public void checkHorsesRidden() {
         boolean allIsRidden = true;
 
         for(Horse horse : stable1) {
