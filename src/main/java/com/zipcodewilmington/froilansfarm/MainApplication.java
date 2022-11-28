@@ -18,6 +18,8 @@ import org.w3c.dom.ls.LSOutput;
 public class MainApplication {
 
     public static void main(String[] args) {
+
+        System.out.println("Froilan Farm Morning Report: ");
         Farmer froilan = new Farmer("Froilan");
         //fix pilot :(
         Farmer froilanda = new Farmer("Froilanda");
@@ -34,13 +36,13 @@ public class MainApplication {
         field.add(tomatoRow);
 
 
-        for (int i = 0; i < 30; i++) {
+        for (int i = 0; i < 60; i++) {
             cornRow.add(new Cornstalk());
         }
 
         System.out.println("There are " + cornRow.size() + " corn stalks in the corn row.");
 
-        for (int i = 0; i < 30; i++) {
+        for (int i = 0; i < 60; i++) {
             tomatoRow.add(new TomatoPlant());
         }
 
@@ -202,8 +204,52 @@ public class MainApplication {
 
         System.out.println("Egg basket has " + eggBasket.size() + " eggs");
 
-        //eat
+        froilan.eat(cb, 1);
+        froilan.eat(tb, 2);
+        froilan.eat(eggBasket, 5);
 
+        froilan.eat(cb, 2);
+        froilan.eat(tb, 1);
+        froilan.eat(eggBasket, 2);
+
+        if (froilan.isFed() == true && froilanda.isFed() == true) {
+            System.out.println("Froilan and Froilanda have eaten");
+        } else {
+            System.out.println("Froilan and Froilanda have not eaten");
+        }
+
+        System.out.println("There are " + cb.size() + " ears of corn in your corn basket");
+        System.out.println("There are " + tb.size() + " tomatoes in your tomato basket");
+        System.out.println("Egg basket has " + eggBasket.size() + " eggs");
+
+        boolean allFed = true;
+        for(Horse horse : stable1) {
+            horse.eat(cb, 3);
+            if(horse.isFed() == false) {
+                allFed = false;
+            }
+        }
+
+        for(Horse horse : stable2) {
+            horse.eat(cb, 3);
+            if(horse.isFed() == false) {
+                allFed = false;
+            }
+        }
+
+        for(Horse horse : stable3) {
+            horse.eat(cb, 3);
+            if(horse.isFed() == false) {
+                allFed = false;
+            }
+        }
+        if (allFed == true) {
+            System.out.println("Horses have eaten");
+        } else {
+            System.out.println("Horses have not eaten");
+        }
+
+        System.out.println("There are " + cb.size() + " ears of corn in your corn basket");
 
     }
 }
