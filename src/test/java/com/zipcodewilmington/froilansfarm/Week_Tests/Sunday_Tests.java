@@ -12,6 +12,7 @@ import Shelter.Stable;
 import org.junit.Test;
 
 public class Sunday_Tests {
+
         Farmer froilan = new Farmer("froilan");
         Pilot froilanda = new Pilot("froilanda");
 

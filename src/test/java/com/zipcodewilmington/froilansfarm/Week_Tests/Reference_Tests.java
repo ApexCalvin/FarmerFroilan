@@ -181,7 +181,7 @@ public class Reference_Tests {
 
     @Test
     public void harvestCropFlagTest(){
-        Farmer farmer = new Farmer("Froiland");
+        Farmer farmer = new Farmer("Froilan");
         Tractor tractor = new Tractor();
         CropRow croprow = new CropRow();
         Cornstalk cornstalk1 = new Cornstalk();
@@ -202,7 +202,7 @@ public class Reference_Tests {
 
     @Test
     public void harvestCropTest(){
-        Farmer farmer = new Farmer("Froiland");
+        Farmer farmer = new Farmer("Froilan");
         Tractor tractor = new Tractor();
         Cornstalk cornstalk = new Cornstalk();
         CornBasket cb = new CornBasket();
