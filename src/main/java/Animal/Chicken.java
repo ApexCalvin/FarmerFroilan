@@ -10,10 +10,18 @@ import Interfaces.Vegetables;
 public class Chicken extends Animal implements Produce, Eater<Vegetables> {
     public boolean fertilized = false;
     public Chicken(String name) {
-        super(name);
+        this.name = name;
     }
 
     public Chicken() {
+        name = "";
+    }
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     @Override
