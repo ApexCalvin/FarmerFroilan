@@ -134,7 +134,7 @@ public class MainApplication {
 //            System.out.println("All horses have not been ridden");
 //        }
 
-        checkHorsesRidden()
+        morningRoutine.checkHorsesRidden();
 
         pilot.mount(cropDuster);
 
